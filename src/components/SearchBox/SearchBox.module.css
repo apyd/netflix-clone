@@ -1,0 +1,26 @@
+.searchBox {
+    display: flex;
+    align-items: stretch;
+}
+
+.searchBox__input {
+    font-family: inherit;
+    font-size: .8rem;
+    background-color: rgb(20,20,20);
+    border: 1px solid white;
+    color: white;
+    width: 200px;
+    padding-left: 10px;
+}
+
+.searchBox__input::placeholder {
+    font-family: inherit;
+    font-size: .8rem;
+}
+
+.icon {
+    max-height: 30px;
+    width: auto;
+    margin: 0 10px;
+    cursor: pointer;
+}
