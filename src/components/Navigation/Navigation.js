@@ -3,29 +3,31 @@ import Dropdown from '../UI/Dropdown/Dropdown'
 import SearchBox from '../SearchBox/SearchBox'
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 import { AppRoutes } from '../../routing/AppRoutes'
+import { useWindowSize } from '../../hooks/useWindowSize'
 import avatar from '../../assets/avatar.png'
 import styles from './Navigation.module.css'
 
 function Navigation() {
+    const { windowWidth } = useWindowSize();
     return (
         <nav className={styles.nav}>
             <ul className={styles['nav__items']}>
                 <div className={styles['nav__links']}>
-                    <NavLink to={AppRoutes.HOME.path} className={styles['nav__link']}>
+                    <NavLink to={AppRoutes.HOME.path} className={[styles['nav__link'], styles['nav__link--logo']].join(' , ')}>
                         <Logo className={styles.logo} />
                     </NavLink>
-                    <NavLink to={AppRoutes.HOME.path} className={({ isActive }) => isActive
+                    {windowWidth >= 924 && <><NavLink to={AppRoutes.HOME.path} className={({ isActive }) => isActive
                         ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
-                        : styles['nav__link']}>Home page</NavLink>
-                    <NavLink to={AppRoutes.TVSERIES.path} className={({ isActive }) => isActive
-                        ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
-                        : styles['nav__link']}>TV Series</NavLink>
-                    <NavLink to={AppRoutes.MOVIES.path} className={({ isActive }) => isActive
-                        ? [styles['nav__link'], styles['nav__link--active']].join(' , ') : styles['nav__link']}>Movies</NavLink>
-                    <NavLink to={AppRoutes.MYLIST.path} className={({ isActive }) => isActive
-                        ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
-                        : styles['nav__link']}>My list</NavLink>
-                    {/* <Dropdown header="Przeglądaj">
+                        : styles['nav__link']}>Home</NavLink>
+                        <NavLink to={AppRoutes.TVSERIES.path} className={({ isActive }) => isActive
+                            ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
+                            : styles['nav__link']}>TV Series</NavLink>
+                        <NavLink to={AppRoutes.MOVIES.path} className={({ isActive }) => isActive
+                            ? [styles['nav__link'], styles['nav__link--active']].join(' , ') : styles['nav__link']}>Movies</NavLink>
+                        <NavLink to={AppRoutes.MYLIST.path} className={({ isActive }) => isActive
+                            ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
+                            : styles['nav__link']}>My list</NavLink></>}
+                    {windowWidth < 924 && <Dropdown header="Navigate">
                         <NavLink to={AppRoutes.HOME.path} className={({ isActive }) => isActive
                             ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
                             : styles['nav__link']}>Home page</NavLink>
@@ -37,11 +39,11 @@ function Navigation() {
                         <NavLink to={AppRoutes.MYLIST.path} className={({ isActive }) => isActive
                             ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
                             : styles['nav__link']}>My list</NavLink>
-                    </Dropdown> */}
+                    </Dropdown>}
                 </div>
-                <div className={styles['nav__options']}>
+                <div className={styles['nav__links']}>
                     <SearchBox />
-                    <Dropdown header={<img src={avatar} height="40px" alt="user avatar icon" />}>
+                    <Dropdown header={<img src={avatar} className={styles['icon--small']} alt="user avatar icon" />}>
                         <NavLink to={AppRoutes.PREFERENCES.path} className={({ isActive }) => isActive
                             ? [styles['nav__link'], styles['nav__link--active']].join(' , ')
                             : styles['nav__link']}>Preferences</NavLink>
