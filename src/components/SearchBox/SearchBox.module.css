@@ -1,16 +1,21 @@
 .searchBox {
     display: flex;
-    align-items: stretch;
+    align-items: center;
 }
 
 .searchBox__input {
+    position: absolute;
+    width: 210px;
+    height: 40px;
+    top: 50%;
+    left: 5px;
+    padding-left: 10px;
+    border: 1px solid var(--white);
+    background-color: var(--black);
+    color: var(--white);
     font-family: inherit;
     font-size: .8rem;
-    background-color: rgb(20,20,20);
-    border: 1px solid white;
-    color: white;
-    width: 200px;
-    padding-left: 10px;
+    transform: translateY(-50%);
 }
 
 .searchBox__input::placeholder {
@@ -19,8 +24,18 @@
 }
 
 .icon {
-    max-height: 30px;
+    max-height: 20px;
     width: auto;
     margin: 0 10px;
     cursor: pointer;
+}
+
+
+@media (min-width: 464px) {
+    .searchBox__input {
+        position: static;
+        width: 150px;
+        transform: none;
+    }
+    
 }
