@@ -5,6 +5,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  --white-20: rgba(255,255,255,.2);
+  --white-40: rgba(255,255,255,.4);
+  --white-60: rgba(255,255,255,.6);
+  --white-80: rgba(255,255,255,.8);
+  --white: rgb(255,255,255);
+  --venetian-red-20 : rgba(193,7,30,.2);
+  --venetian-red-40 : rgba(193,7,30,.4);
+  --venetian-red-60 : rgba(193,7,30,.6);
+  --venetian-red-80 : rgba(193,7,30,.8);
+  --venetian-red : rgb(193,7,30);
+  --gainsboro-20: rgba(222,222,222,.2);
+  --gainsboro-40: rgba(222,222,222,.4);
+  --gainsboro-60: rgba(222,222,222,.6);
+  --gainsboro-80: rgba(222,222,222,.8);
+  --gainsboro: rgb(222,222,222);
+  --blue-zodiac-20: rgba(67,70,94,.2);
+  --blue-zodiac-40: rgba(67,70,94,.4);
+  --blue-zodiac-60: rgba(67,70,94,.6);
+  --blue-zodiac-80: rgba(67,70,94,.8);
+  --blue-zodiac: rgb(67,70,94);
+  --nero-20: rgba(41,41,41,.2);
+  --nero-40: rgba(41,41,41,.4);
+  --nero-60: rgba(41,41,41,.6);
+  --nero-80: rgba(41,41,41,.8);
+  --nero: rgb(41,41,41);
+  --blue-whale-20: rgba(19,24,52,.2);
+  --blue-whale-40: rgba(19,24,52,.4);
+  --blue-whale-60: rgba(19,24,52,.6);
+  --blue-whale-80: rgba(19,24,52,.8);
+  --blue-whale: rgb(19,24,52);
+  --black-20: rgba(0,0,0,.2);
+  --black-40: rgba(0,0,0,.4);
+  --black-60: rgba(0,0,0,.6);
+  --black-80: rgba(0,0,0,.8);
+  --black: rgb(0,0,0);
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 code {
