@@ -11,34 +11,34 @@ import Preferences from '../pages/Preferences/Preferences'
 export const AppRoutes = {
     HOME: {
         path: '/',
-        component: HomeScreen()
+        component: <HomeScreen />
     },
     LOGIN: {
         path: '/login',
-        component: Login()
+        component: <Login />
     },
     REGISTER: {
         path: '/register',
-        component: Register()
+        component: <Register />
     },
     MOVIES: {
         path: '/movies',
-        component: Movies()
+        component: <Movies />
     },
     TVSERIES: {
         path: '/tvseries',
-        component: TVSeries()
+        component: <TVSeries />
     },
     MYLIST: {
         path: '/my-list',
-        component: MyList()
+        component: <MyList />
     },
     PAYMENTS: {
         path: '/payments',
-        component: Payments()
+        component: <Payments />
     },
     PREFERENCES: {
         path: '/preferences',
-        component: Preferences()
+        component: <Preferences />
     },
 }
