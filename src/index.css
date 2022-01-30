@@ -1,11 +1,4 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+:root {
   --white-20: rgba(255,255,255,.2);
   --white-40: rgba(255,255,255,.4);
   --white-60: rgba(255,255,255,.6);
@@ -41,9 +34,30 @@ body {
   --black-60: rgba(0,0,0,.6);
   --black-80: rgba(0,0,0,.8);
   --black: rgb(0,0,0);
+  --navbar-height: 60px;
+  --z-index-nav: 900;
+  --header-font: 'Fira Sans', -apple-system, 'Roboto', sans-serif;
+  --subheader-font: 'Actor', -apple-system, 'Roboto', sans-serif;
+  --text-font: 'Quattrocentro Sans', -apple-system, 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--text-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
   @media (max-width: 768px) {
     font-size: 12px;
   }
+}
+
+h1,h2,h3 {
+  font-family: var(--header-font);
+}
+
+h4,h5,h6 {
+  font-family: var(--subheader-font)
 }
 
 code {
