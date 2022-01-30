@@ -19,6 +19,6 @@ export const useMediaDetails = (type, id) => {
             });
         }
         fetchData();
-    }, [type.id])
+    }, [type, id])
     return mediaDetails
 }
