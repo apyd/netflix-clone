@@ -1,8 +1,14 @@
-import React from 'react';
+import HeroMedia from '../../components/HeroMedia/HeroMedia';
+import { useMediaDetails } from '../../hooks/useMediaDetails';
+import { mediaType } from '../../api/api';
 
-function HomeScreen() {
+
+const HomeScreen = () => {
+    const id = 425909;
+    const details = useMediaDetails(mediaType.movie, id);
+
     return <div className="homeScreen">
-        <p>AAAAAAA</p>
+        {details && <HeroMedia {...details} />}
     </div>;
 }
 
