@@ -6,11 +6,13 @@ import { AppRoutes } from '../../routing/AppRoutes'
 import { useWindowSize } from '../../hooks/useWindowSize'
 import avatar from '../../assets/avatar.png'
 import styles from './Navigation.module.css'
+import useScrollPosition from '../../hooks/useScrollPosition'
 
 function Navigation() {
     const { windowWidth } = useWindowSize();
+    const scrollPosition = useScrollPosition();
     return (
-        <nav className={styles.nav}>
+        <nav className={scrollPosition > 30 ? [styles.nav, styles['nav--scrolled']].join(' , ') : styles.nav}>
             <ul className={styles['nav__items']}>
                 <div className={styles['nav__links']}>
                     <NavLink to={AppRoutes.HOME.path} className={[styles['nav__link'], styles['nav__link--logo']].join(' , ')}>

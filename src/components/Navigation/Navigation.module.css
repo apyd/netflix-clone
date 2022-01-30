@@ -3,8 +3,17 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--navbar-height);
     padding: 0 .5rem;
-    background-color: var(--black);
+    background: rgba(0, 0, 0, 0);
+    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+    transition: background .5s ease-in-out;
+    z-index: var(--z-index-nav);
+}
+
+.nav--scrolled {
+    background: rgb(0, 0, 0);
 }
 
 .nav__items {
@@ -48,7 +57,7 @@
 
 .logo {
     width: auto;
-    max-height: 30px;
+    height: 30px;
     margin: 0 10px 0 0;
 }
 
